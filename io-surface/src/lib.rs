@@ -190,16 +190,16 @@ extern {
     pub static kIOSurfaceIsGlobal: CFStringRef;
     pub static kIOSurfacePixelFormat: CFStringRef;
 
-    fn IOSurfaceCreate(properties: CFDictionaryRef) -> IOSurfaceRef;
-    fn IOSurfaceLookup(csid: IOSurfaceID) -> IOSurfaceRef;
-    fn IOSurfaceGetID(buffer: IOSurfaceRef) -> IOSurfaceID;
+    pub fn IOSurfaceCreate(properties: CFDictionaryRef) -> IOSurfaceRef;
+    pub fn IOSurfaceLookup(csid: IOSurfaceID) -> IOSurfaceRef;
+    pub fn IOSurfaceGetID(buffer: IOSurfaceRef) -> IOSurfaceID;
 
-    fn IOSurfaceGetTypeID() -> CFTypeID;
+    pub fn IOSurfaceGetTypeID() -> CFTypeID;
 
-    fn IOSurfaceLock(buffer: IOSurfaceRef, options: u32, seed: *mut u32) -> IOReturn;
-    fn IOSurfaceUnlock(buffer: IOSurfaceRef, options: u32, seed: *mut u32) -> IOReturn;
+    pub fn IOSurfaceLock(buffer: IOSurfaceRef, options: u32, seed: *mut u32) -> IOReturn;
+    pub fn IOSurfaceUnlock(buffer: IOSurfaceRef, options: u32, seed: *mut u32) -> IOReturn;
 
-    fn IOSurfaceGetHeight(buffer: IOSurfaceRef) -> size_t;
-    fn IOSurfaceGetBytesPerRow(buffer: IOSurfaceRef) -> size_t;
-    fn IOSurfaceGetBaseAddress(buffer: IOSurfaceRef) -> *mut c_void;
+    pub fn IOSurfaceGetHeight(buffer: IOSurfaceRef) -> size_t;
+    pub fn IOSurfaceGetBytesPerRow(buffer: IOSurfaceRef) -> size_t;
+    pub fn IOSurfaceGetBaseAddress(buffer: IOSurfaceRef) -> *mut c_void;
 }
